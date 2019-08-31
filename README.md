@@ -14,7 +14,7 @@ The author **does not** assume any responsibility when you use this script, as i
 
 ## Introduction & How to use
 
-As the name implies, this script lets you buy champions in Teamfight Tactics using the keyboard in the same fashion as Dota Underlords.
+As the name implies, this script lets you buy champions in _Teamfight Tactics_ using the keyboard in the same fashion as _Dota Underlords_.
 
 To buy a champion, press a number key from <kbd>1</kbd> to <kbd>5</kbd>, i.e. <kbd>1</kbd> buys the first champion in the pool, <kbd>2</kbd> buys the second champion, &c.
 
@@ -22,7 +22,7 @@ To stop the script, use the system tray icon and select _Exit_.
 
 When the game window is not active, number keys retain their original role.
 
-Number keys will intercept chat messages with those numbers, so you can use numpad keys for chatting without buying champions.
+Number keys will intercept in-game chat messages with those numbers, so you can use numpad keys for chatting without buying champions.
 
 Technically, this script creates a keyboard hook that watches user key input and invoke the "buy champion" function when one of the expected correct number keys is pressed. AutoIt's built-in `HotKeySet()` function won't work in the game window, so a WinAPI keyboard hook must be used.
 
