@@ -1,4 +1,4 @@
-; LOL Teamfight Tactics Champion Hot Keys © 2019 T.D. Stoneheart. Some rights reserved. Source code available under GPLv3 license.
+; LOL Teamfight Tactics Champion Hot Keys © 2019–2020 T.D. Stoneheart. Some rights reserved. Source code available under GPLv3 license.
 #cs
                      GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
@@ -682,7 +682,7 @@ Public License instead of this License.  But first, please read
 #pragma compile(UPX, False)
 #pragma compile(Icon, 'League of Legends_100.ico')
 #pragma compile(CompanyName, 'T.D. Stoneheart')
-#pragma compile(LegalCopyright, '© 2019 T.D. Stoneheart')
+#pragma compile(LegalCopyright, '© 2019-2020 T.D. Stoneheart')
 #pragma compile(ProductName, 'LOL Teamfight Tactics Champion Hot Keys')
 #RequireAdmin
 #include <StructureConstants.au3>
@@ -691,9 +691,10 @@ Public License instead of this License.  But first, please read
 #include <WindowsConstants.au3>
 
 Global Const $name = "LOL Teamfight Tactics Champion Hot Keys — T.D. Stoneheart"
-Global Const $about = $name & ", last updated 2019/09/03"
-Global Const $copyright = "Source code form of LOL Teamfight Tactics Champion Hot Keys is available GNU GPLv3. © 2019 T.D. Stoneheart."
+Global Const $about = $name & ", last updated 2020/01/19"
+Global Const $copyright = "Source code form of LOL Teamfight Tactics Champion Hot Keys is available GNU GPLv3. © 2019–2020 T.D. Stoneheart."
 Global Const $title = "[TITLE:League of Legends (TM) Client; CLASS:RiotWindowClass]"
+Global Const $KEYCODE_0 = 0x30, $KEYCODE_GRAVE = 0xC0
 TraySetToolTip($name)
 AutoItSetOption("TrayAutoPause", 0)
 AutoItSetOption("MouseCoordMode", 2)
@@ -720,10 +721,10 @@ Func BuyChampion($keycode)
 	Local $size = WinGetClientSize($title), $mouse = MouseGetPos()
 	If Not IsArray($size) Or Not IsArray($mouse) Then Return 0
 	MouseUp('main')
-	If $keycode = 0xC0 Then
-		MouseMove(Round(($size[0] - $size[1]) / 2 + ($size[1] / 5.5 * -.25)), Round($size[1] / 6 * 5), 0)
+	If $keycode = $KEYCODE_GRAVE Then
+		MouseMove(Round(($size[0] - $size[1]) / 2 + ($size[1] / 5.5 * 5.25)), Round($size[1] / 6 * 5), 0)
 	Else
-		MouseMove(Round(($size[0] - $size[1]) / 2 + (($size[1] / 5.5) * ($keycode - 47 - 1.25))), Round($size[1] / 12 * 11), 0)
+		MouseMove(Round(($size[0] - $size[1]) / 2 + (($size[1] / 5.5) * ($keycode - $KEYCODE_0 - .25))), Round($size[1] / 12 * 11), 0)
 	EndIf
 	Sleep(50)
 	MouseClick('main')
@@ -743,7 +744,7 @@ Func _KeyProc($nCode, $wParam, $lParam)
 	If $nCode < 0 Then Return _WinAPI_CallNextHookEx($g_hHook, $nCode, $wParam, $lParam)
 	If Not _IsPressed('10') And Not _IsPressed('11') And Not _IsPressed('12') Then ; _IsPressed: 10 Shift, 11 Ctrl, 12 Alt
 		Switch $keycode
-			Case 48 To 54, 0xC0 ; number keys from 1 to 5, numpad not included, and grave accent key
+			Case $KEYCODE_0 + 1 To $KEYCODE_0 + 5, $KEYCODE_GRAVE ; number keys from 1 to 5, numpad not included, and grave accent key
 				If $wParam = $WM_KEYDOWN And WinActive($title) Then Return -1
 				If $wParam = $WM_KEYUP Then Return -BuyChampion($keycode) ; return -1 to not send the original key
 		EndSwitch
