@@ -680,7 +680,7 @@ Public License instead of this License.  But first, please read
 #pragma compile(ExecLevel, requireAdministrator)
 #pragma compile(Compression, 9)
 #pragma compile(UPX, False)
-#pragma compile(Icon, 'League of Legends_100.ico')
+; #pragma compile(Icon, 'League of Legends_100.ico')
 #pragma compile(CompanyName, 'T.D. Stoneheart')
 #pragma compile(LegalCopyright, '© 2019-2020 T.D. Stoneheart')
 #pragma compile(ProductName, 'LOL Teamfight Tactics Champion Hot Keys')
