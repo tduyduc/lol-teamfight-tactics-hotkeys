@@ -12,11 +12,15 @@ The author **does not** assume any responsibility when you use this script, as i
 
 -----
 
-## Introduction & How to use
+## What this does
 
 As the name implies, this script lets you buy champions in _Teamfight Tactics_ using the keyboard in the similar fashion as _Dota Underlords_.
 
 A demonstration video can be found [here](https://www.youtube.com/watch?v=ScW1dGrifGU).
+
+-----
+
+## How to use
 
 To buy a champion, press a number key from <kbd>1</kbd> to <kbd>5</kbd>, i.e. <kbd>1</kbd> buys the first champion in the pool, <kbd>2</kbd> buys the second champion, &c. To lock or unlock the champion pool, press <kbd>`</kbd> _(grave accent)_ key.
 
