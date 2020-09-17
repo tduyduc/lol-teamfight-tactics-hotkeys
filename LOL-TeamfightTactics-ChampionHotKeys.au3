@@ -1,4 +1,4 @@
-; LOL Teamfight Tactics Champion Hot Keys © 2019–2020 T.D. Stoneheart. Some rights reserved. Source code available under GPLv3 license.
+; LOL Teamfight Tactics Champion Hot Keys © 2019–2020 T.D. Stoneheart. All rights reserved. Source code available under GPLv3 license.
 #cs
                      GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
